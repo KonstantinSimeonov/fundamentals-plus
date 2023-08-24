@@ -3,6 +3,10 @@
  * The "numbers" array will always contain a sole unique number.
  * Find that number and return it.
  *
+ * GUARANTEES:
+ * - "numbers" will never be of length 0 or 2
+ * - "numbers" will contain values in the range [0; 100]
+ *
  * @example
  * [1, 1, 2, 3, 2] -> 3
  *
@@ -13,7 +17,7 @@
  * You can return a value like that:
  * function whatever(x) {
  *   let y = x + 1;
- *   return y // return happens here
+ *   return y
  * }
  *
  * @param {number[]} numbers
@@ -24,13 +28,13 @@ function soleUnique(numbers) {
 }
 
 const tests = [
-  [[47], 47],
-  [[86, 57, 86, 86], 57],
-  [[65, 98, 65], 98],
-  [[6, 2, 72, 6, 72, 6], 2],
-  [[18, 81, 18, 52, 52, 18, 52], 81],
-  [[26, 1, 26, 1, 64, 33, 33], 64],
-  [[62, 65, 22, 22, 30, 62, 50, 77, 50, 65, 22, 77, 65], 30],
+  [[91], 91],
+  [[52, 60, 52], 60],
+  [[84, 45, 84], 45],
+  [[47, 34, 47, 47, 87, 87, 87], 34],
+  [[65, 7, 32, 7, 65], 32],
+  [[42, 7, 7, 57, 42, 42, 2, 2, 2], 57],
+  [[11, 85, 85, 19, 19, 24, 11, 44, 85, 72, 11, 44, 24], 72],
 ];
 for (let i = 0; i < tests.length; ++i) {
   const [input, realAnswer] = tests[i];
